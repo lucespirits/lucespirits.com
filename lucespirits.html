@@ -67,7 +67,7 @@ nav a:hover { color: var(--ink); }
 
 /* ── MAIN WRAPPER ────────────────────────────────────── */
 .page {
-  max-width: var(--max);
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 var(--pad);
 }
@@ -87,12 +87,30 @@ nav a:hover { color: var(--ink); }
 }
 
 .hero-photo {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
+  width: auto;
+  max-width: 380px;
+  max-height: 480px;
   display: block;
+  object-fit: contain;
+  position: absolute;
+  animation: wander 22s linear infinite;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
   margin-bottom: 32px;
-  background: rgba(0,0,0,0.08);
+}
+
+@keyframes wander {
+  0%   { left: -380px; top: 40px; }
+  20%  { top: 20px; }
+  40%  { top: 60px; }
+  60%  { top: 15px; }
+  80%  { top: 50px; }
+  100% { left: 110%; top: 40px; }
 }
 
 .hero-photo-placeholder {
@@ -407,6 +425,7 @@ footer {
 
 <header>
   <div class="nav-inner">
+    <a href="#home" style="font-size:14px;font-weight:700;letter-spacing:0.08em;text-decoration:none;color:var(--ink);">LUCE SPIRITS</a>
     <nav>
       <ul>
         <li><a href="#spirits">Spirits</a></li>
@@ -414,6 +433,7 @@ footer {
         <li><a href="#about">About</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#find-us">Find Us</a></li>
+        <li><a href="#press">Press</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -425,11 +445,12 @@ footer {
 <!-- HERO -->
 <div id="home">
   <img src="LOGO_1_.png" alt="Luce Spirits" class="hero-logo">
-  <img src="hero.jpg" alt="Luce Spirits" class="hero-photo">
+  <div class="hero-photo-wrap">
+    <img src="hero.png" alt="Luce Spirits" class="hero-photo">
+  </div>
   <h1 class="hero-heading">Luce Spirits is a distillery, tasting room, lounge, and bottle shop focusing on plant-focused spirits.</h1>
   <p class="hero-body">We make a variety of botanically-oriented products inspired by the flora and culture of Mid-Coast Maine. We use wild-foraged, locally grown, and organic ingredients to make delicious stuff: sometimes traditional, sometimes less so. A little nip before your Wednesday Casserole? Perfect! A wedding present for your fancy uncle? Also perfect!</p>
-  <p class="hero-body">Our tasting room in downtown Rockland regularly serves up classic and inventive cocktails and has been host to late-night hangs, first dates, dance parties and more. Stop in for a drink, a bottle to-go, or just to say hello.</p>
-  <p class="hero-hours">Wednesday – Monday &nbsp;·&nbsp; 4–9 PM</p>
+  <p class="hero-hours">Thursday – Sunday &nbsp;·&nbsp; 4–10 PM</p>
   <p class="hero-address">474 Main Street, Rockland, Maine</p>
   <p class="hero-address">Hours are subject to change — see our <a href="https://www.instagram.com/lucespirits/">Instagram</a> for updates</p>
 </div>
@@ -444,7 +465,7 @@ footer {
       <div class="spirit-name">Aquiline Vitae</div>
       <div class="spirit-type">Aquavit</div>
       <p class="spirit-desc">The word aquavit comes from the Latin Aqua Vitae, "water of life". Our Swedish-style aquavit is based on a family recipe and is perfect after a hot Yuletide sauna or a cold Midsummer swim. Like Zosimus says: it parts the spirit from the body, and binds the spirit to the body. Skål!</p>
-      <div class="spirit-meta">40% ABV &nbsp;·&nbsp; 750ml</div>
+      <div class="spirit-meta">40% ABV &nbsp;·&nbsp; 375ml &amp; 750ml</div>
     </div>
   </div>
 
@@ -454,17 +475,17 @@ footer {
       <div class="spirit-name">Old Tom</div>
       <div class="spirit-type">Gin</div>
       <p class="spirit-desc">JUNIPER, Tree of Life!!! This blessed "ever-green" has been used by cultures across the globe for millennia to purify negative influences and send prayers to the heavens. Our Old Tom is a nod to the pre "London Dry" era; we use freshly collected whole-branch juniper, which imparts both a slight sweetness and a rugged earthiness to the spirit. Use it in any gin cocktail, or sip it on ice when you need to banish fearful emotions.</p>
-      <div class="spirit-meta">40% ABV &nbsp;·&nbsp; 750ml</div>
+      <div class="spirit-meta">40% ABV &nbsp;·&nbsp; 375ml &amp; 750ml</div>
     </div>
   </div>
 
   <div class="spirit">
-    <div class="spirit-img-placeholder">photo</div>
+    <img src="shebear.png" alt="She Bear Traditional Absinthe" class="spirit-img">
     <div class="spirit-text">
       <div class="spirit-name">She Bear</div>
       <div class="spirit-type">Traditional Absinthe</div>
       <p class="spirit-desc">WORMWOOD! She bears the Latin name Artemisia Absinthium, which refers to both the Greek goddess of Wild Things (Artemis), and its most famous use as a key botanical in absinthe. Wormwood provides the bitter bite to this misunderstood spirit (similar perhaps, to the mythical bite of young women in the Cult of Artemis who "acted the bear" during periods of ritual wildness) — so be sure to use it sparingly: either as an anise-y accent in your favorite cocktail, or in a 1:4 ratio with ice-cold water on a sweltering day.</p>
-      <div class="spirit-meta">65% ABV &nbsp;·&nbsp; 750ml &nbsp;·&nbsp; Annual limited batch</div>
+      <div class="spirit-meta">60–65% ABV &nbsp;·&nbsp; 375ml &nbsp;·&nbsp; Annual limited batch</div>
     </div>
   </div>
 
@@ -473,7 +494,7 @@ footer {
     <div class="spirit-text">
       <div class="spirit-name">Gladys'</div>
       <div class="spirit-type">Coffee Liqueur</div>
-      <p class="spirit-desc">Made with cold-brewed coffee from a Maine roaster we've worked with since the beginning. Rich, roasted, and not too sweet — enough sweetness to balance, not to bury.</p>
+      <p class="spirit-desc">Coffee liqueur is a beloved Maine tradition. We aren't reinventing the wheel here, just using good ingredients, like Portland-roasted Tandem Coffee beans and organic raw sugar. It will make you re-consider the White Russian...</p>
       <div class="spirit-meta">30% ABV &nbsp;·&nbsp; 750ml</div>
     </div>
   </div>
@@ -483,7 +504,8 @@ footer {
     <div class="spirit-text">
       <div class="spirit-name">Janara</div>
       <div class="spirit-type">Black Walnut Liqueur</div>
-      <div class="spirit-meta">44% ABV &nbsp;·&nbsp; 750ml</div>
+      <p class="spirit-desc">Inspired by Italian Nocino, our extra-special after dinner drink is made by steeping locally foraged black walnuts in an organic neutral base, and finishing it with some Maine maple syrup and a few whole organic vanilla beans. Great to drink on the rocks or with your favorite whiskey or rum in a nifty, nutty cocktail.</p>
+      <div class="spirit-meta">44% ABV &nbsp;·&nbsp; 375ml</div>
     </div>
   </div>
 
@@ -508,8 +530,9 @@ footer {
 <div class="section" id="visit">
   <div class="section-title">Visit</div>
   <p>Our tasting room in downtown Rockland regularly serves up classic and inventive cocktails and has been host to late-night hangs, first dates, dance parties and more. Stop in for a drink, a bottle to-go, or just to say hello.</p>
+  <img src="tasting-room.jpg" alt="Dancing at the tasting room" style="width:100%;margin:24px 0;display:block;">
   <div class="visit-details">
-    <strong>Wednesday – Monday &nbsp;·&nbsp; 4–9 PM</strong><br>
+    <strong>Thursday – Sunday &nbsp;·&nbsp; 4–10 PM</strong><br>
     474 Main Street, Rockland, Maine 04841<br>
     <a href="mailto:nate@lucespirits.com" style="color:var(--mid);text-decoration:none;">nate@lucespirits.com</a><br>
     <a href="https://www.instagram.com/lucespirits/" style="color:var(--mid);text-decoration:none;">@lucespirits</a>
@@ -527,6 +550,7 @@ footer {
     <span class="event-when">Monthly</span>
     <span class="event-what">First and Third Fridays, Karaoke 8–11</span>
   </div>
+  <hr style="border:none;border-top:1px solid var(--rule);margin:20px 0;">
   <p class="wholesale-note">Event inquiries: <a href="mailto:lizzie@lucespirits.com" style="color:var(--mid);">lizzie@lucespirits.com</a></p>
 </div>
 
@@ -535,8 +559,68 @@ footer {
   <div class="section-title">Where to Find Us</div>
   <div class="account-item">
     <span>Tasting Room — 474 Main St, Rockland</span>
-    <span class="account-tag">Full lineup</span>
+    <span class="account-tag">All products</span>
   </div>
+  <div class="account-item">
+    <span>Bow Street #8302 — 79 Bow St, Freeport</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Bow Street Beverage — 495 Forest Ave, Portland</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>R.S.V.P. Portland — 887 Forest Ave, Portland</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Old Port Spirits &amp; Cigars — Portland</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Brooklin General Store — 4 Reach Rd, Brooklin</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Global Beverage Warehouse — 425 High St, Ellsworth</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Damon's Bev — 700 Hogan Rd, Bangor</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Stompers — 23 Main Rd, Holden</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <div class="account-item">
+    <span>Patmans — 95 Tandberg Trail, Windham</span>
+    <span class="account-tag">Retail</span>
+  </div>
+  <p class="wholesale-note" style="margin-top:16px;"><a href="https://www.mainespirits.com/products/luce-spirits-aquiline-vitae-aquavit" target="_blank" rel="noopener" style="color:var(--mid);">Check who is carrying specific spirits through Maine Spirits.</a> Be sure to request our stuff at your favorite bar, restaurant, or liquor store!</p>
+</div>
+
+<!-- PRESS -->
+<div class="section" id="press">
+  <div class="section-title">Press</div>
+  <div class="account-item">
+    <span><a href="https://www.midcoastvillager.com/life/villagers/rockland-s-arts-community-spirit/article_cdc4e196-7f72-465c-8ad1-bedcc780adca.html" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);">Rockland's Arts Community Spirit<span style="display:block;font-size:13px;color:var(--mid);font-style:italic;margin-top:2px;">Midcoast Villager — Willy Blackmore</span></a></span>
+    <span class="account-tag">2026</span>
+  </div>
+  <a href="https://www.midcoastvillager.com/life/villagers/rockland-s-arts-community-spirit/article_cdc4e196-7f72-465c-8ad1-bedcc780adca.html" target="_blank" rel="noopener">
+    <img src="villager-press.png" alt="Rockland's Arts Community Spirit — Midcoast Villager" style="width:100%;max-width:560px;display:block;margin:12px auto 24px;">
+  </a>
+  <div class="account-item">
+    <span><a href="https://www.wineenthusiast.com/culture/is-american-amaro-the-next-big-thing/" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);">Is American Amaro the Next Big Thing?<span style="display:block;font-size:13px;color:var(--mid);font-style:italic;margin-top:2px;">Wine Enthusiast — Margot Mazur</span></a></span>
+    <span class="account-tag">2024</span>
+  </div>
+  <div class="account-item" style="margin-top:16px;">
+    <span><a href="https://www.culturedmag.com/article/2024/07/31/guide-to-maine-arts-ann-craven-artist/" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);">Maine Is a New Art-World Hotspot: Painter Ann Craven's Guide to the Scene<span style="display:block;font-size:13px;color:var(--mid);font-style:italic;margin-top:2px;">Cultured Magazine — Ann Craven</span></a></span>
+    <span class="account-tag">2024</span>
+  </div>
+  <a href="https://www.culturedmag.com/article/2024/07/31/guide-to-maine-arts-ann-craven-artist/" target="_blank" rel="noopener">
+    <img src="craven.png" alt="Maine Is a New Art-World Hotspot — Cultured Magazine" style="width:100%;max-width:560px;display:block;margin:12px auto 24px;">
+  </a>
 </div>
 
 <!-- CONTACT -->
@@ -553,12 +637,7 @@ footer {
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-name">Luce Spirits</div>
-    <div class="footer-detail">
-      474 Main St. &nbsp;·&nbsp; Rockland, ME 04841<br>
-      <a href="mailto:nate@lucespirits.com">nate@lucespirits.com</a> &nbsp;·&nbsp;
-      <a href="https://www.instagram.com/lucespirits/" target="_blank" rel="noopener">Instagram</a>
-    </div>
+    <div class="footer-name">Luce Spirits &nbsp;·&nbsp; Rockland, Maine &nbsp;·&nbsp; © 2026</div>
   </div>
 </footer>
 
